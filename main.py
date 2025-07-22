@@ -52,6 +52,12 @@ def check_temperature():
 
     return f"Temperature checked: {temp:.2f}°C - Status: {status}"
 
+# ✅ Health check route for Render
+@app.route('/healthz')
+def health_check():
+    return "OK", 200
+
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)
+
